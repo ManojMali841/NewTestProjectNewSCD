@@ -20,7 +20,7 @@ public class BaseClass {
 		try
 		{
 			prop=new Properties();
-			FileInputStream fis=new FileInputStream("C:/Manoj/WorkSpace/NewSCD/src/main/java/configuration/Config.properties");
+			FileInputStream fis=new FileInputStream("C:/Users/manoj.mali/git/repository2/NewSCD/src/main/java/configuration/Config.properties");
 			prop.load(fis);
 	}
 		catch(IOException e)
