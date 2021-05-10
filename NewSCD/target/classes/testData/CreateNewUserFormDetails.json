@@ -1,0 +1,31 @@
+{
+"FormDetails":[ 
+
+{
+"Username":"TrynewuserJenkins",
+"FirstName":"Trynewuser1",
+"LastName":"Trynewuser11",
+"Email":"Test@gmail.com",
+"Password":"Abcd@123",
+"Location":"Test",
+"UserRole":"Preparer",
+"Department":"Verification-Temp Staff",
+"Comments":"dummyuser1",
+"SecurityQuestion1":"In which city you were born ?",
+"answer1":"Pune",
+"SecurityQuestion2":"In which city was your first job ?",
+"answer2":"Mumbai",
+"SecurityQuestion3":"What is my father's birthday ?",
+"answer3":"SecondOctober",
+"newpassword":"Abcd@1234"
+
+}
+]
+
+
+
+
+
+
+
+}

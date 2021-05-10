@@ -1,0 +1,7 @@
+baseClass\BaseClass.class
+pageClass\EditUserDetail.class
+pageClass\AdminHomePage.class
+pageClass\DeleteUser.class
+pageClass\LoginPageFeaturesMethods.class
+pageClass\NewlyCreatedUserLogin.class
+utilities\TestUtil.class

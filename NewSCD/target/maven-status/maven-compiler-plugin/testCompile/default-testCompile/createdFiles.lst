@@ -1,0 +1,6 @@
+runner\Runner.class
+stepdefinition\EditUserDetails.class
+stepdefinition\LoginPage.class
+stepdefinition\AdminPageHome.class
+stepdefinition\DeleteUserFrmAdmn.class
+stepdefinition\NewlyCreatedUserLog.class
