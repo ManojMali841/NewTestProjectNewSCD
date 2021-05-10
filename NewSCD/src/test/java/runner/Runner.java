@@ -13,11 +13,12 @@ import io.cucumber.junit.CucumberOptions;
 	glue= {"stepdefinition"},
 	plugin= {"pretty", "html:target/TestReport.html"},
 		tags="@Smoketest1 or @Smoketest2 or @Smoketest7", 
+				//tags="@Smoketest1 or @Smoketest2 or @Smoketest3 or @Smoketest4 or @Smoketest5",
+				//tags="@Smoketest1 or @Smoketest2 or @Smoketest6", 
+				
 	monochrome = true
 			)
 		
 	public class Runner {
-		//tags="@Smoketest1 or @Smoketest2 or @Smoketest3 or @Smoketest4 or @Smoketest5",
-		//tags="@Smoketest1 or @Smoketest2 or @Smoketest6", 
 		
 }
