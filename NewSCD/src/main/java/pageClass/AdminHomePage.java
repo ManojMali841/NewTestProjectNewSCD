@@ -83,7 +83,7 @@ WebElement UserRoles;
 	public void EnterCreateUserFormDetails() throws InterruptedException, IOException, ParseException
 	{
 		JSONParser jparser= new JSONParser();
-		FileReader fr=new FileReader("C:/Manoj/WorkSpace/NewSCD/src/main/java/testData/CreateNewUserFormDetails.json");
+		FileReader fr=new FileReader("C:/Users/manoj.mali/git/repository2/NewSCD/src/main/java/testData/CreateNewUserFormDetails.json");
 		JSONObject jobject=(JSONObject) jparser.parse(fr);
 		JSONArray jarray=(JSONArray) jobject.get("FormDetails");
 		for(int i=0;i<jarray.size();i++)

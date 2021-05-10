@@ -102,7 +102,7 @@ WebElement UserRoles;
 		
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		JSONParser jparser= new JSONParser();
-		FileReader fr=new FileReader("C:/Manoj/WorkSpace/NewSCD/src/main/java/testData/EditUserDetailsAndDelete.json");
+		FileReader fr=new FileReader("C:/Users/manoj.mali/git/repository2/NewSCD/src/main/java/testData/EditUserDetailsAndDelete.json");
 		JSONObject jobject=(JSONObject) jparser.parse(fr);
 		JSONArray jarray=(JSONArray) jobject.get("EditUserDetails");
 		for(int i=0;i<jarray.size();i++)

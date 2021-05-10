@@ -44,7 +44,7 @@ public class NewlyCreatedUserLogin extends BaseClass {
 	{
 		 
 		JSONParser jparser= new JSONParser();
-		FileReader fr=new FileReader("C:/Manoj/WorkSpace/NewSCD/src/main/java/testData/CreateNewUserFormDetails.json");
+		FileReader fr=new FileReader("C:/Users/manoj.mali/git/repository2/NewSCD/src/main/java/testData/CreateNewUserFormDetails.json");
 		JSONObject jobject=(JSONObject) jparser.parse(fr);
 		JSONArray jarray=(JSONArray) jobject.get("FormDetails");
 		for(int i=0;i<jarray.size();i++)
@@ -69,7 +69,7 @@ public class NewlyCreatedUserLogin extends BaseClass {
 	
 	public void SetSecurityFeaturesQuestions(int i) throws IOException, ParseException, InterruptedException {
 		JSONParser jparser= new JSONParser();
-		FileReader fr=new FileReader("C:/Manoj/WorkSpace/NewSCD/src/main/java/testData/CreateNewUserFormDetails.json");
+		FileReader fr=new FileReader("C:/Users/manoj.mali/git/repository2/NewSCD/src/main/java/testData/CreateNewUserFormDetails.json");
 		JSONObject jobject=(JSONObject) jparser.parse(fr);
 		JSONArray jarray=(JSONArray) jobject.get("FormDetails");
 		
@@ -156,7 +156,7 @@ public class NewlyCreatedUserLogin extends BaseClass {
 	{
 		 
 		JSONParser jparser= new JSONParser();
-		FileReader fr=new FileReader("C:/Manoj/WorkSpace/NewSCD/src/main/java/testData/CreateNewUserFormDetails.json");
+		FileReader fr=new FileReader("C:/Users/manoj.mali/git/repository2/NewSCD/src/main/java/testData/CreateNewUserFormDetails.json");
 		JSONObject jobject=(JSONObject) jparser.parse(fr);
 		JSONArray jarray=(JSONArray) jobject.get("FormDetails");
 		for(int i=0;i<jarray.size();i++)
