@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="4" time="166.804">
+    <testcase classname="NewSCD functional test" name="verify title of new SCD login page" time="44.432">
+        <system-out><![CDATA[Given launch new SCD url....................................................passed
+When check title of login page..............................................passed
+Then verify actual title with expected title of New SCD login page..........passed
+]]></system-out>
+    </testcase>
+    <testcase classname="NewSCD functional test" name="verify new SCD login functionalty with Negative Login Credentials" time="43.078">
+        <system-out><![CDATA[Given user click on New SCD username text field.............................passed
+When user enters invalid username and password..............................passed
+And click on sign in button to login into New SCD...........................passed
+And user refresh the login page.............................................passed
+Then user enters valid username and password................................passed
+And user click on sign in button to login into New SCD......................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="NewSCD functional test" name="Create New User" time="47.793">
+        <system-out><![CDATA[Given click on expand button................................................passed
+When click on user management...............................................passed
+Then click on create new user...............................................passed
+And enter details in create user form and save..............................passed
+Then click on logout button.................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="NewSCD functional test" name="Newly created user login along with answering  security questions &amp; new password setting" time="30.489">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#LoginRequest_UserName&quot;}&#10;  (Session info: chrome=90.0.4430.93)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'&#10;System info: host: 'SW12-OPVDI74', ip: '10.2.10.232', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '15.0.1'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 90.0.4430.93, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\MANOJ~1.MAL\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:52914}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 9090ba7bdab6524b04ac01a98abd4b90&#10;*** Element info: {Using=id, value=LoginRequest_UserName}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given login with newly created user login credentials.......................failed
+And Answer All Security questions...........................................skipped
+When enter new password and confirm password................................skipped
+And click on submit button..................................................skipped
+Then redirect to New SCD Login Window.......................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#LoginRequest_UserName"}
+  (Session info: chrome=90.0.4430.93)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'SW12-OPVDI74', ip: '10.2.10.232', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '15.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 90.0.4430.93, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\MANOJ~1.MAL\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:52914}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 9090ba7bdab6524b04ac01a98abd4b90
+*** Element info: {Using=id, value=LoginRequest_UserName}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+	at org.openqa.selenium.By$ById.findElement(By.java:188)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.sendKeys(Unknown Source)
+	at pageClass.NewlyCreatedUserLogin.VerifyNewUserScdLogin(NewlyCreatedUserLogin.java:59)
+	at stepdefinition.NewlyCreatedUserLog.login_with_newly_created_user_login_credentials(NewlyCreatedUserLog.java:15)
+	at ✽.login with newly created user login credentials(file:///C:/Users/manoj.mali/git/repository2/NewSCD/src/test/java/feature/NewSCDLoginFeature.feature:39)
+]]></failure>
+    </testcase>
+</testsuite>
