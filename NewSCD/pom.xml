@@ -19,7 +19,11 @@
     <artifactId>cucumber-java</artifactId>
     <version>6.7.0</version>
 </dependency>
-  
+  <dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-picocontainer</artifactId>
+    <version>4.2.6</version>
+</dependency>
 <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-jvm -->
 <dependency>
     <groupId>io.cucumber</groupId>
@@ -54,6 +58,8 @@
     <version>5.5.2</version>
 </dependency>
 
+
+
 <!-- https://mvnrepository.com/artifact/junit/junit -->
 <dependency>
     <groupId>junit</groupId>
@@ -80,11 +86,34 @@
   </dependencies>
   
   <build>
-        <plugins>
+  <plugins>
+  <plugin>
+    <groupId>net.masterthought</groupId>
+    <artifactId>maven-cucumber-reporting</artifactId>
+    <version>5.3.0</version>
+    <executions>
+        <execution>
+            <id>execution</id>
+            <phase>verify</phase>
+            <goals>
+                <goal>generate</goal>
+            </goals>
+            <configuration>
+     <projectName>NewSCD</projectName>
+     <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
+     <inputDirectory>${project.build.directory}/CucumberTestReport.json</inputDirectory>
+     <jsonFiles>
+          <param>**/*.json</param>
+     </jsonFiles>
+</configuration>
+        </execution>
+    </executions>
+</plugin>
+       
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.2</version>
+                <version>3.5.1</version>
                 <configuration>
                     
                     <compilerVersion>1.8</compilerVersion>
@@ -92,11 +121,15 @@
                     <target>${maven.compiler.target}</target>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M3</version>
-                <configuration>                   
+                <configuration>
+                   
+          <useSystemClassLoader>false</useSystemClassLoader>
+       
                     <includes>
                         <include>**/*Runner.java</include>
                     </includes>
@@ -104,4 +137,5 @@
             </plugin>
 </plugins>
 </build>
+
 </project>
