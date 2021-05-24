@@ -71,8 +71,28 @@ And   select delete user and click on OK
 Then  confirm user is deleted successfully
 
 
+@Smoketest8
+Scenario: Assign Binder to Team Lead
+
+Given login New SCD with Verification Manager
+And   click on NewSCD Activity button
+When  Search for Manager Assignment queue link and click on it
+And   Click on Add Team Leads link 
+And   Add Team Lead into Team Lead List pane
+And   Select an UnAssigned Binder and select Team Lead
+Then  click on Assign button
 
 
+@Smoketest9
+Scenario: Assign Binder to Verification
+
+Given login New SCD with Verification Team Lead
+And   click on Activity button
+When  Search for Team Lead Assignment queue link and click on it
+And   Click on Add Verifiers link 
+And   Add Verifier into Verifier List pane
+And   Select an UnAssigned Binder and select Verifier
+Then  click on Binder Assignment button
 
 
 
