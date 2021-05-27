@@ -1,9 +1,11 @@
 
 package pageClass;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -98,15 +100,15 @@ WebElement UserRoles;
 		
 	}
 	
-	public void BndrAssignmentToTL() throws InterruptedException, IOException, ParseException, org.json.simple.parser.ParseException {
-		Thread.sleep(2000);
-		//Expandbutton.click();
-		Thread.sleep(2000);
+	public void BinderAssignToVerifier() throws IOException, org.json.simple.parser.ParseException   {
+		
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		WebDriverWait wait=new WebDriverWait(driver, 20);
 		activityBtn.click();
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		verifierQueue.click();
-		Thread.sleep(2000);
-		JavascriptExecutor js = (JavascriptExecutor)driver;
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		//JavascriptExecutor js = (JavascriptExecutor)driver;
 		JSONParser jparser= new JSONParser();
 		FileReader fr=new FileReader("C:/Users/manoj.mali/git/repository2/NewSCD/src/main/java/testData/TeamLeadLoginData.json");
 		JSONObject jobject=(JSONObject) jparser.parse(fr);
@@ -121,47 +123,46 @@ WebElement UserRoles;
 		
 		String[] bindrList=BinderId.split("/");
 		String xp="//div[@id='teamLeader']//*[contains(text(),'"+ VerifierName +"')]";	
-		Thread.sleep(5000);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		addVerifierbtn.click();
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		VerifierSearch.click();
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		VerifierSearch.sendKeys(VerifierName);
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		wait.until(ExpectedConditions.visibilityOf(verifierCheckBox));
 		if(verifierCheckBox.isSelected()==false) {
 			verifierCheckBox.click();
-		Thread.sleep(2000);
+			driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
 		verifierAddButton.click();
 		}
 		else 
 			verifierCancelButton.click();
 		
-		Thread.sleep(5000);
+		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
 		
 		for(int j=0;j<bindrList.length;j++) {
 		if(bindrList[j]!="") {
 		if(binderSearchBtn.isEnabled()==true)
 		binderSearchBtn.click();
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
 		searchTextBoxBinder.sendKeys(bindrList[j]);
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
+		wait.until(ExpectedConditions.visibilityOf(binderCheckBox));
 		if(binderCheckBox.isSelected()==false)
 		binderCheckBox.click();
-		Thread.sleep(5000);
+		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
 		
 		/*if(BindrSrchClearBtn.isEnabled()==true) {
 			BindrSrchClearBtn.click();
 		}*/
 		}
 		}
-		Thread.sleep(3000);
+		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
 		driver.findElement(By.xpath(xp)).click();
 		if(binderAssigntoVerifier.isEnabled()==true)
 			binderAssigntoVerifier.click();
-		Thread.sleep(8000);
-		
-		
-		
+		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);		
 	}
 	}
   }

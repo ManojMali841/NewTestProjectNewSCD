@@ -3,6 +3,7 @@ package pageClass;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -104,15 +105,16 @@ public class BinderAssignmentToTeamLead extends BaseClass{
 	}
 	
 	public void BndrAssignmentToTL() throws InterruptedException, IOException, ParseException, org.json.simple.parser.ParseException {
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		
 		//Expandbutton.click();
 		CheckDeleteUsrFun();
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		activityBtn.click();
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		managerQueue.click();
-		Thread.sleep(2000);
-		JavascriptExecutor js = (JavascriptExecutor)driver;
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		//JavascriptExecutor js = (JavascriptExecutor)driver;
 		JSONParser jparser= new JSONParser();
 		FileReader fr=new FileReader("C:/Users/manoj.mali/git/repository2/NewSCD/src/main/java/testData/ManagerLoginData.json");
 		JSONObject jobject=(JSONObject) jparser.parse(fr);
@@ -126,44 +128,44 @@ public class BinderAssignmentToTeamLead extends BaseClass{
 		String	BinderId=(String)cred.get("BinderId");
 		String[] bindrList=BinderId.split("/");
 		String xp="//div[@id='teamLeader']//*[contains(text(),'"+ TeamLeadName +"')]";	
-		Thread.sleep(5000);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		addTeamLeadbtn.click();
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		teamLeadSearch.click();
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		teamLeadSearch.sendKeys(TeamLeadName);
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		if(teamLeadCheckBox.isSelected()==false) {
 		teamLeadCheckBox.click();
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		teamLeadAddButton.click();
 		}
 		else 
 		teamLeadCancelButton.click();
 		
-		Thread.sleep(5000);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		
 		for(int j=0;j<bindrList.length;j++) {
 		if(bindrList[j]!="") {
 		if(binderSearchBtn.isEnabled()==true)
 		binderSearchBtn.click();
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		searchTextBoxBinder.sendKeys(bindrList[j]);
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		if(binderCheckBox.isSelected()==false)
 		binderCheckBox.click();
-		Thread.sleep(5000);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		
-		if(BindrSrchClearBtn.isEnabled()==true) {
-			BindrSrchClearBtn.click();
+		//if(BindrSrchClearBtn.isEnabled()==true) {
+			//BindrSrchClearBtn.click();
+		
 		}
 		}
-		}
-		Thread.sleep(3000);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.findElement(By.xpath(xp)).click();
 		if(binderAssigntoTL.isEnabled()==true)
 		binderAssigntoTL.click();
-		Thread.sleep(8000);
+		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
 		
 	
 		
@@ -172,14 +174,14 @@ public class BinderAssignmentToTeamLead extends BaseClass{
 	public void CheckDeleteUsrFun() throws IOException, ParseException, InterruptedException, org.json.simple.parser.ParseException
 	{
 		
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		adminitvBtn.click();
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		if(userMgmtBtn.isEnabled()) {
 		userMgmtBtn.click();
-		Thread.sleep(8000);
+		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
 	    ThreeDots.click();
-	    Thread.sleep(8000);
+	    driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
 	        try {
 	        if(DeleteButton.isDisplayed()==false)
 	        System.out.println("Delete functionality is not Available");
