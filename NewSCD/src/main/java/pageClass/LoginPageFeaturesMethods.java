@@ -43,7 +43,7 @@ public class LoginPageFeaturesMethods extends BaseClass{
 	public void VerifyNewScdLoginFeature() throws IOException, ParseException, InterruptedException
 	{
 		JSONParser jparser= new JSONParser();
-		FileReader fr=new FileReader("C:/Users/manoj.mali/git/repository2/NewSCD/src/main/java/testData/VerifierDataFile.json");//"C:/Users/manoj.mali/git/repository2/NewSCD/src/main/java/testData/logincred.json");
+		FileReader fr=new FileReader("C:/Users/manoj.mali/git/repository2/NewSCD/src/main/java/testData/logincred.json");//"C:/Users/manoj.mali/git/repository2/NewSCD/src/main/java/testData/logincred.json");
 		JSONObject jobject=(JSONObject) jparser.parse(fr);
 		JSONArray jarray=(JSONArray) jobject.get("Credentials");
 		for(int i=0;i<jarray.size();i++)
