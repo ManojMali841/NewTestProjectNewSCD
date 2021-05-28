@@ -3,11 +3,11 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-05-27T07:27:53.122Z",
+        "start_timestamp": "2021-05-28T10:19:17.424Z",
         "before": [
           {
             "result": {
-              "duration": 7998000,
+              "duration": 7944200,
               "status": "passed"
             },
             "match": {
@@ -22,7 +22,7 @@
         "after": [
           {
             "result": {
-              "duration": 4219400,
+              "duration": 4997400,
               "status": "passed"
             },
             "match": {
@@ -35,7 +35,7 @@
         "steps": [
           {
             "result": {
-              "duration": 11890035000,
+              "duration": 12934438900,
               "status": "passed"
             },
             "line": 10,
@@ -47,7 +47,7 @@
           },
           {
             "result": {
-              "duration": 2088997600,
+              "duration": 2151609000,
               "status": "passed"
             },
             "line": 11,
@@ -59,7 +59,7 @@
           },
           {
             "result": {
-              "duration": 3003574600,
+              "duration": 3002392700,
               "status": "passed"
             },
             "line": 12,
@@ -77,11 +77,11 @@
         ]
       },
       {
-        "start_timestamp": "2021-05-27T07:28:10.583Z",
+        "start_timestamp": "2021-05-28T10:19:35.867Z",
         "before": [
           {
             "result": {
-              "duration": 1000500,
+              "duration": 1998300,
               "status": "passed"
             },
             "match": {
@@ -96,6 +96,7 @@
         "after": [
           {
             "result": {
+              "duration": 1097100,
               "status": "passed"
             },
             "match": {
@@ -108,7 +109,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1004600,
+              "duration": 1996900,
               "status": "passed"
             },
             "line": 18,
@@ -120,7 +121,7 @@
           },
           {
             "result": {
-              "duration": 18383998900,
+              "duration": 17650500000,
               "status": "passed"
             },
             "line": 19,
@@ -132,7 +133,7 @@
           },
           {
             "result": {
-              "duration": 1999400,
+              "duration": 1003800,
               "status": "passed"
             },
             "line": 20,
@@ -144,7 +145,7 @@
           },
           {
             "result": {
-              "duration": 1004300,
+              "duration": 999700,
               "status": "passed"
             },
             "line": 21,
@@ -156,7 +157,7 @@
           },
           {
             "result": {
-              "duration": 940200,
+              "duration": 1008700,
               "status": "passed"
             },
             "line": 22,
@@ -185,11 +186,11 @@
         ]
       },
       {
-        "start_timestamp": "2021-05-27T07:28:29.055Z",
+        "start_timestamp": "2021-05-28T10:19:53.624Z",
         "before": [
           {
             "result": {
-              "duration": 1000800,
+              "duration": 996800,
               "status": "passed"
             },
             "match": {
@@ -197,14 +198,14 @@
             }
           }
         ],
-        "line": 87,
-        "name": "Assign Binder to Verification",
+        "line": 99,
+        "name": "Login to Verifier and Open Assigned Binder for Processing",
         "description": "",
-        "id": "newscd-functional-test;assign-binder-to-verification",
+        "id": "newscd-functional-test;login-to-verifier-and-open-assigned-binder-for-processing",
         "after": [
           {
             "result": {
-              "duration": 1051400,
+              "duration": 998900,
               "status": "passed"
             },
             "match": {
@@ -217,90 +218,44 @@
         "steps": [
           {
             "result": {
-              "duration": 997800,
+              "duration": 3001397800,
               "status": "passed"
             },
-            "line": 89,
-            "name": "login New SCD with Verification Team Lead",
+            "line": 101,
+            "name": "login New SCD with Verifier",
             "match": {
-              "location": "stepdefinition.AssignBinderToVerifier.login_New_SCD_with_Verification_Team_Lead()"
+              "location": "stepdefinition.OpenBinderWithVerifierLogin.login_New_SCD_with_Verifier()"
             },
             "keyword": "Given "
           },
           {
             "result": {
+              "duration": 16845619400,
               "status": "passed"
             },
-            "line": 90,
-            "name": "click on Activity button",
+            "line": 102,
+            "name": "Search for a Binder",
             "match": {
-              "location": "stepdefinition.AssignBinderToVerifier.click_on_Activity_button()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 998400,
-              "status": "passed"
-            },
-            "line": 91,
-            "name": "Search for Team Lead Assignment queue link and click on it",
-            "match": {
-              "location": "stepdefinition.AssignBinderToVerifier.Search_for_Team_Lead_Assignment_queue_link_and_click_on_it()"
+              "location": "stepdefinition.OpenBinderWithVerifierLogin.Search_for_a_Binder()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 1001600,
+              "duration": 5382030200,
               "status": "passed"
             },
-            "line": 92,
-            "name": "Click on Add Verifiers link",
+            "line": 103,
+            "name": "click on Open Binder button",
             "match": {
-              "location": "stepdefinition.AssignBinderToVerifier.Click_on_Add_Verifiers_link()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 1958900,
-              "status": "passed"
-            },
-            "line": 93,
-            "name": "Add Verifier into Verifier List pane",
-            "match": {
-              "location": "stepdefinition.AssignBinderToVerifier.Add_Verifier_into_Verifier_List_pane()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 94,
-            "name": "Select an UnAssigned Binder and select Verifier",
-            "match": {
-              "location": "stepdefinition.AssignBinderToVerifier.Select_an_UnAssigned_Binder_and_select_Verifier()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 13689074000,
-              "status": "passed"
-            },
-            "line": 95,
-            "name": "click on Binder Assignment button",
-            "match": {
-              "location": "stepdefinition.AssignBinderToVerifier.click_on_Binder_Assignment_button()"
+              "location": "stepdefinition.OpenBinderWithVerifierLogin.click_on_Open_Binder_button()"
             },
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "name": "@Smoketest9"
+            "name": "@Smoketest10"
           }
         ]
       }

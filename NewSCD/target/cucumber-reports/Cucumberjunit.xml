@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="50.867">
-    <testcase classname="NewSCD functional test" name="verify title of new SCD login page" time="17.392">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="62.37">
+    <testcase classname="NewSCD functional test" name="verify title of new SCD login page" time="18.359">
         <system-out><![CDATA[Given launch new SCD url....................................................passed
 When check title of login page..............................................passed
 Then verify actual title with expected title of New SCD login page..........passed
 ]]></system-out>
     </testcase>
-    <testcase classname="NewSCD functional test" name="verify new SCD login functionalty with Negative Login Credentials" time="18.408">
+    <testcase classname="NewSCD functional test" name="verify new SCD login functionalty with Negative Login Credentials" time="17.675">
         <system-out><![CDATA[Given user click on New SCD username text field.............................passed
 When user enters invalid username and password..............................passed
 And click on sign in button to login into New SCD...........................passed
@@ -15,14 +15,10 @@ Then user enters valid username and password................................pass
 And user click on sign in button to login into New SCD......................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="NewSCD functional test" name="Assign Binder to Verification" time="13.707">
-        <system-out><![CDATA[Given login New SCD with Verification Team Lead.............................passed
-And click on Activity button................................................passed
-When Search for Team Lead Assignment queue link and click on it.............passed
-And Click on Add Verifiers link.............................................passed
-And Add Verifier into Verifier List pane....................................passed
-And Select an UnAssigned Binder and select Verifier.........................passed
-Then click on Binder Assignment button......................................passed
+    <testcase classname="NewSCD functional test" name="Login to Verifier and Open Assigned Binder for Processing" time="25.235">
+        <system-out><![CDATA[Given login New SCD with Verifier...........................................passed
+When Search for a Binder....................................................passed
+Then click on Open Binder button............................................passed
 ]]></system-out>
     </testcase>
 </testsuite>
