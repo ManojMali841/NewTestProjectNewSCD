@@ -83,6 +83,7 @@ WebElement UserRoles;
 	public void EnterCreateUserFormDetails() throws InterruptedException, IOException, ParseException
 	{
 		JSONParser jparser= new JSONParser();
+		String vari="Verification";
 		FileReader fr=new FileReader("C:/Users/manoj.mali/git/repository2/NewSCD/src/main/java/testData/CreateNewUserFormDetails.json");
 		JSONObject jobject=(JSONObject) jparser.parse(fr);
 		JSONArray jarray=(JSONArray) jobject.get("FormDetails");
@@ -132,6 +133,7 @@ driver.findElement(By.xpath("//body")).click();
 	}
 	Thread.sleep(3000);
 	UserRoles.click();
+	driver.findElement(By.xpath("//li[@role='treeitem']//*[contains(text(),'"+vari+"')]/preceding::span[@class='k-icon k-i-expand']")).click();
 	Thread.sleep(3000);
 	List<WebElement> UserRolDrpVal=driver.findElements(By.xpath("//li[@role='treeitem']"));
 	System.out.println(UserRolDrpVal.size());
@@ -169,6 +171,6 @@ driver.findElement(By.xpath("//body")).click();
 		driver.findElement(By.xpath("//i[text()='settings']")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.id("log-out-btn")).click();
-		
+		//driver.close();
 	}
 }

@@ -94,6 +94,7 @@ WebElement UserRoles;
 	}
 	
 	public void EditUser() throws InterruptedException, IOException, ParseException, org.json.simple.parser.ParseException {
+		
 		Thread.sleep(2000);
 		Expandbutton.click();
 		Thread.sleep(2000);
@@ -112,6 +113,7 @@ WebElement UserRoles;
 		String	user=(String)cred.get("Username");
 		
 		String	Userrol=(String)cred.get("Role");
+		
 		String	Dept=(String)cred.get("Department");
 		
 		

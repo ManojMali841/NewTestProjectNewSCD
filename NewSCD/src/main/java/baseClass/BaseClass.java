@@ -15,6 +15,7 @@ import utilities.TestUtil;
 public class BaseClass {
 	public static WebDriver driver;
 	public static Properties prop;
+	public static int waitPeriod;
 	public BaseClass()
 	{
 		try
@@ -33,7 +34,7 @@ public class BaseClass {
 
 	public static void initialization()
 	{
-		
+	int waitPeriod=Integer.parseInt(prop.getProperty("Wait"));	
 	String browsername=prop.getProperty("Browser");
 	if(browsername.equals("chrome"))
 			{
