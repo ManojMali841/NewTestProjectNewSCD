@@ -3,11 +3,11 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-05-28T10:19:17.424Z",
+        "start_timestamp": "2021-05-31T13:42:50.694Z",
         "before": [
           {
             "result": {
-              "duration": 7944200,
+              "duration": 5999100,
               "status": "passed"
             },
             "match": {
@@ -22,7 +22,7 @@
         "after": [
           {
             "result": {
-              "duration": 4997400,
+              "duration": 2997700,
               "status": "passed"
             },
             "match": {
@@ -35,7 +35,7 @@
         "steps": [
           {
             "result": {
-              "duration": 12934438900,
+              "duration": 22769029400,
               "status": "passed"
             },
             "line": 10,
@@ -47,7 +47,7 @@
           },
           {
             "result": {
-              "duration": 2151609000,
+              "duration": 2064001000,
               "status": "passed"
             },
             "line": 11,
@@ -59,7 +59,7 @@
           },
           {
             "result": {
-              "duration": 3002392700,
+              "duration": 3003024300,
               "status": "passed"
             },
             "line": 12,
@@ -77,11 +77,11 @@
         ]
       },
       {
-        "start_timestamp": "2021-05-28T10:19:35.867Z",
+        "start_timestamp": "2021-05-31T13:43:18.805Z",
         "before": [
           {
             "result": {
-              "duration": 1998300,
+              "duration": 2047400,
               "status": "passed"
             },
             "match": {
@@ -96,7 +96,6 @@
         "after": [
           {
             "result": {
-              "duration": 1097100,
               "status": "passed"
             },
             "match": {
@@ -109,7 +108,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1996900,
+              "duration": 2999100,
               "status": "passed"
             },
             "line": 18,
@@ -121,7 +120,7 @@
           },
           {
             "result": {
-              "duration": 17650500000,
+              "duration": 27716997200,
               "status": "passed"
             },
             "line": 19,
@@ -133,7 +132,6 @@
           },
           {
             "result": {
-              "duration": 1003800,
               "status": "passed"
             },
             "line": 20,
@@ -145,7 +143,7 @@
           },
           {
             "result": {
-              "duration": 999700,
+              "duration": 995500,
               "status": "passed"
             },
             "line": 21,
@@ -157,7 +155,6 @@
           },
           {
             "result": {
-              "duration": 1008700,
               "status": "passed"
             },
             "line": 22,
@@ -186,11 +183,11 @@
         ]
       },
       {
-        "start_timestamp": "2021-05-28T10:19:53.624Z",
+        "start_timestamp": "2021-05-31T13:43:46.595Z",
         "before": [
           {
             "result": {
-              "duration": 996800,
+              "duration": 1997700,
               "status": "passed"
             },
             "match": {
@@ -205,7 +202,7 @@
         "after": [
           {
             "result": {
-              "duration": 998900,
+              "duration": 991000,
               "status": "passed"
             },
             "match": {
@@ -218,7 +215,7 @@
         "steps": [
           {
             "result": {
-              "duration": 3001397800,
+              "duration": 3001000900,
               "status": "passed"
             },
             "line": 101,
@@ -230,7 +227,7 @@
           },
           {
             "result": {
-              "duration": 16845619400,
+              "duration": 29630984800,
               "status": "passed"
             },
             "line": 102,
@@ -242,7 +239,7 @@
           },
           {
             "result": {
-              "duration": 5382030200,
+              "duration": 5365998300,
               "status": "passed"
             },
             "line": 103,

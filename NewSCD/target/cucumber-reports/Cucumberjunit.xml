@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="62.37">
-    <testcase classname="NewSCD functional test" name="verify title of new SCD login page" time="18.359">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="94.737">
+    <testcase classname="NewSCD functional test" name="verify title of new SCD login page" time="28.048">
         <system-out><![CDATA[Given launch new SCD url....................................................passed
 When check title of login page..............................................passed
 Then verify actual title with expected title of New SCD login page..........passed
 ]]></system-out>
     </testcase>
-    <testcase classname="NewSCD functional test" name="verify new SCD login functionalty with Negative Login Credentials" time="17.675">
+    <testcase classname="NewSCD functional test" name="verify new SCD login functionalty with Negative Login Credentials" time="27.748">
         <system-out><![CDATA[Given user click on New SCD username text field.............................passed
 When user enters invalid username and password..............................passed
 And click on sign in button to login into New SCD...........................passed
@@ -15,7 +15,7 @@ Then user enters valid username and password................................pass
 And user click on sign in button to login into New SCD......................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="NewSCD functional test" name="Login to Verifier and Open Assigned Binder for Processing" time="25.235">
+    <testcase classname="NewSCD functional test" name="Login to Verifier and Open Assigned Binder for Processing" time="38.009">
         <system-out><![CDATA[Given login New SCD with Verifier...........................................passed
 When Search for a Binder....................................................passed
 Then click on Open Binder button............................................passed
