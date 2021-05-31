@@ -18,7 +18,7 @@ import io.cucumber.junit.CucumberOptions;
            
     //tags="@Smoketest1 or @Smoketest2",// or @Smoketest10",// or @Smoketest4 or @Smoketest5",
             publish = true,
-      tags="@Smoketest1 or @Smoketest2 or @Smoketest3 or @Smoketest4 or @Smoketest5 or @Smoketest6 or @Smoketest7",
+      tags="@Smoketest1 or @Smoketest2 or @Smoketest10", //or @Smoketest4 or @Smoketest5 or @Smoketest6 or @Smoketest7",
                 //tags="@Smoketest1 or @Smoketest2 or @Smoketest7",
             //@Smoketest2 or @Smoketest3 or @Smoketest4 or @Smoketest5
     monochrome = true

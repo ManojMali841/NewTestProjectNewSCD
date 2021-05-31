@@ -59,7 +59,7 @@ public class OpenBinderForVerifier extends BaseClass{
 		String	binderId=(String)cred.get("BinderId");
 		//String	pass=(String)cred.get("Password");
 		//driver.wait(20000);
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		activityBtn.click();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		verifierQueue.click();
