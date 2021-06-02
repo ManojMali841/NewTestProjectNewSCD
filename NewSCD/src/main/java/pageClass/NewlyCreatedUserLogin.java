@@ -174,7 +174,7 @@ public class NewlyCreatedUserLogin extends BaseClass {
 		Thread.sleep(3000);
 		signin.click();
 		Thread.sleep(3000);
-		driver.close();
+		//driver.close();
 		
 		
 	}

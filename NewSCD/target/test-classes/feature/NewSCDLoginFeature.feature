@@ -95,6 +95,12 @@ And   Select an UnAssigned Binder and select Verifier
 Then  click on Binder Assignment button
 
 
+@Smoketest10
+Scenario: Assign Binder to Verification
+
+Given login New SCD with Verifier
+When  Search for a Binder
+Then  click on Open Binder button
 
 
 

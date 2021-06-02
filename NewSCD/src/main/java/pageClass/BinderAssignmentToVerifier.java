@@ -100,7 +100,7 @@ WebElement UserRoles;
 	}
 	
 	public void BndrAssignmentToTL() throws InterruptedException, IOException, ParseException, org.json.simple.parser.ParseException {
-		
+		WebDriverWait wait=new WebDriverWait(driver, 30);
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		activityBtn.click();
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
@@ -141,12 +141,14 @@ WebElement UserRoles;
 		for(int j=0;j<bindrList.length;j++) {
 		if(bindrList[j]!="") {
 		if(binderSearchBtn.isEnabled()==true)
-		binderSearchBtn.click();
+		//binderCheckBox.click();//
+			binderSearchBtn.click();
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		searchTextBoxBinder.sendKeys(bindrList[j]);
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		Thread.sleep(30000);
 		if(binderCheckBox.isSelected()==false)
-		binderCheckBox.click();
+			wait.until(ExpectedConditions.elementToBeClickable(binderCheckBox)).click();//binderCheckBox.click();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		
 		/*if(BindrSrchClearBtn.isEnabled()==true) {

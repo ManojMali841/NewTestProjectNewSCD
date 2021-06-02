@@ -2,13 +2,13 @@
 "FormDetails":[ 
 
 {
-"Username":"TrynewuserJenkins",
-"FirstName":"Trynewuser1",
-"LastName":"Trynewuser11",
+"Username":"TestManoj13",
+"FirstName":"TestA",
+"LastName":"ManojA",
 "Email":"Test@gmail.com",
 "Password":"Abcd@123",
-"Location":"Test",
-"UserRole":"Preparer",
+"Location":"Mumbai",
+"UserRole":["Manager","Reviewer","Sr. Verifier","Team Lead","Verifier"],
 "Department":"Verification-Temp Staff",
 "Comments":"dummyuser1",
 "SecurityQuestion1":"In which city you were born ?",
@@ -21,11 +21,4 @@
 
 }
 ]
-
-
-
-
-
-
-
 }

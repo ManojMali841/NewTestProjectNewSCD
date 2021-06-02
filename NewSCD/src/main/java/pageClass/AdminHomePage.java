@@ -3,6 +3,9 @@ package pageClass;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.json.simple.JSONArray;
@@ -12,6 +15,7 @@ import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -80,6 +84,7 @@ WebElement UserRoles;
 		Thread.sleep(2000);
 	}
 	
+	@SuppressWarnings("unlikely-arg-type")
 	public void EnterCreateUserFormDetails() throws InterruptedException, IOException, ParseException
 	{
 		JSONParser jparser= new JSONParser();
@@ -96,7 +101,13 @@ WebElement UserRoles;
 		String	pass=(String)cred.get("Password");
 		String	Loc=(String)cred.get("Location");
 		String	Com=(String)cred.get("Comments");
-		String	Userrol=(String)cred.get("UserRole");
+@SuppressWarnings("unchecked")
+ArrayList<String> Userrol=(ArrayList<String>)cred.get("UserRole");
+int arysize=Userrol.size();
+
+System.out.println(arysize);
+
+
 		String	Dept=(String)cred.get("Department");
 		
 		
@@ -133,17 +144,33 @@ driver.findElement(By.xpath("//body")).click();
 	Thread.sleep(3000);
 	UserRoles.click();
 	Thread.sleep(3000);
+	
+	//driver.findElement(By.xpath("//span[@class='k-icon k-i-collapse']")).click();
+	//Thread.sleep(3000);
+	
+	String prep="Preparation";
+    driver.findElement(By.xpath("//li[@role='treeitem']//*[contains(text(),'"+prep+"')]/preceding::span[@class='k-icon k-i-collapse']")).click();
+  Thread.sleep(3000);
+	String vari="Verification";
+    driver.findElement(By.xpath("//li[@role='treeitem']//*[contains(text(),'"+vari+"')]/preceding::span[@class='k-icon k-i-expand'][1]")).click();
+
+   
+
 	List<WebElement> UserRolDrpVal=driver.findElements(By.xpath("//li[@role='treeitem']"));
 	System.out.println(UserRolDrpVal.size());
 	
 	for(int k=0;k<UserRolDrpVal.size();k++)
 	{
-		
-		if(UserRolDrpVal.get(k).getText().equals(Userrol))
+		for (int m=0;m<=arysize-1;m++)
 		{
-			UserRolDrpVal.get(k).click();
-			break;
+			if(UserRolDrpVal.get(k).getText().equals(Userrol.get(m)))
+			{
+				UserRolDrpVal.get(k).click();
+				
+			
+			}	
 		}
+		
 	}
 	Thread.sleep(3000);
 	Department.click();
@@ -171,4 +198,5 @@ driver.findElement(By.xpath("//body")).click();
 		driver.findElement(By.id("log-out-btn")).click();
 		
 	}
+	
 }

@@ -73,7 +73,7 @@ public class BinderAssignmentToTeamLead extends BaseClass{
 	@FindBy(xpath="//input[@id='txtgdSearch']")
 	WebElement searchTextBoxBinder;
 	
-	@FindBy(xpath="//table/tbody/tr[1]//td[1]//input[@class='k-checkbox']")
+	@FindBy(xpath="//table/tbody/tr/td/input[@class='k-checkbox']")////table/tbody/tr[1]//td[1]//input[@class='k-checkbox']")
 	WebElement binderCheckBox;
 	
 	@FindBy(xpath="//a[@id='clearFilter']")
@@ -109,6 +109,7 @@ public class BinderAssignmentToTeamLead extends BaseClass{
 		
 		//Expandbutton.click();
 		CheckDeleteUsrFun();
+		WebDriverWait wait=new WebDriverWait(driver,40);
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		activityBtn.click();
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
@@ -151,9 +152,11 @@ public class BinderAssignmentToTeamLead extends BaseClass{
 		binderSearchBtn.click();
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		searchTextBoxBinder.sendKeys(bindrList[j]);
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-		if(binderCheckBox.isSelected()==false)
-		binderCheckBox.click();
+		//driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		Thread.sleep(20000);
+		//if(binderCheckBox.isSelected()==false) {
+			wait.until(ExpectedConditions.elementToBeClickable(binderCheckBox)).click();//binderCheckBox.click();
+		//}
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		
 		//if(BindrSrchClearBtn.isEnabled()==true) {

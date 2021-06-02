@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="62.975">
-    <testcase classname="NewSCD functional test" name="verify title of new SCD login page" time="17.575">
+<testsuite errors="0" failures="3" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="8" time="276.741">
+    <testcase classname="NewSCD functional test" name="verify title of new SCD login page" time="18.932">
         <system-out><![CDATA[Given launch new SCD url....................................................passed
 When check title of login page..............................................passed
 Then verify actual title with expected title of New SCD login page..........passed
 ]]></system-out>
     </testcase>
-    <testcase classname="NewSCD functional test" name="verify new SCD login functionalty with Negative Login Credentials" time="18.087">
+    <testcase classname="NewSCD functional test" name="verify new SCD login functionalty with Negative Login Credentials" time="32.021">
         <system-out><![CDATA[Given user click on New SCD username text field.............................passed
 When user enters invalid username and password..............................passed
 And click on sign in button to login into New SCD...........................passed
@@ -15,8 +15,30 @@ Then user enters valid username and password................................pass
 And user click on sign in button to login into New SCD......................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="NewSCD functional test" name="Assign Binder to Team Lead" time="26.146">
-        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//table/tbody/tr[1]//td[1]//input[@class='k-checkbox']&quot;}&#10;  (Session info: chrome=90.0.4430.212)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'&#10;System info: host: 'SW12-OPVDI74', ip: '10.2.10.232', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '15.0.1'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 90.0.4430.212, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\MANOJ~1.MAL\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:56218}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: fe84a8884f324269e24ead0ba603b9b8&#10;*** Element info: {Using=xpath, value=//table/tbody/tr[1]//td[1]//input[@class='k-checkbox']}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given login New SCD with Verification Manager...............................passed
+    <testcase classname="NewSCD functional test" name="Create New User" time="64.223">
+        <system-out><![CDATA[Given click on expand button................................................passed
+When click on user management...............................................passed
+Then click on create new user...............................................passed
+And enter details in create user form and save..............................passed
+Then click on logout button.................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="NewSCD functional test" name="Newly created user login along with answering  security questions &amp; new password setting" time="56.917">
+        <system-out><![CDATA[Given login with newly created user login credentials.......................passed
+And Answer All Security questions...........................................passed
+When enter new password and confirm password................................passed
+And click on submit button..................................................passed
+Then redirect to New SCD Login Window.......................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="NewSCD functional test" name="After saving new password for newly created user relogin with new credentials" time="11.836">
+        <system-out><![CDATA[Given relogin with new credentials of newly created user....................passed
+When click on sign in button................................................passed
+Then user is on New SCD homepage............................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="NewSCD functional test" name="Assign Binder to Team Lead" time="59.629">
+        <failure message="element not interactable&#10;  (Session info: chrome=91.0.4472.77)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'&#10;System info: host: 'SW12-OPVDI74', ip: '10.2.10.232', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '15.0.1'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.77, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\MANOJ~1.MAL\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:59799}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: d1e71926a0f1ce450d683011cb0872f1" type="org.openqa.selenium.ElementNotInteractableException"><![CDATA[Given login New SCD with Verification Manager...............................passed
 And click on NewSCD Activity button.........................................passed
 When Search for Manager Assignment queue link and click on it...............passed
 And Click on Add Team Leads link............................................passed
@@ -25,15 +47,50 @@ And Select an UnAssigned Binder and select Team Lead........................pass
 Then click on Assign button.................................................failed
 
 StackTrace:
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//table/tbody/tr[1]//td[1]//input[@class='k-checkbox']"}
-  (Session info: chrome=90.0.4430.212)
+org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=91.0.4472.77)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'SW12-OPVDI74', ip: '10.2.10.232', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '15.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.77, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\MANOJ~1.MAL\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:59799}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d1e71926a0f1ce450d683011cb0872f1
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at pageClass.AdminHomePage.UserLogout(AdminHomePage.java:198)
+	at stepdefinition.AssignBinderToTeamLead.click_on_Assign_button(AssignBinderToTeamLead.java:55)
+	at ✽.click on Assign button(file:///C:/Users/manoj.mali/git/repository2/NewSCD/src/test/java/feature/NewSCDLoginFeature.feature:83)
+]]></failure>
+    </testcase>
+    <testcase classname="NewSCD functional test" name="Assign Binder to Verification" time="8.446">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id='txtteamgdSearch']&quot;}&#10;  (Session info: chrome=91.0.4472.77)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'&#10;System info: host: 'SW12-OPVDI74', ip: '10.2.10.232', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '15.0.1'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.77, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\MANOJ~1.MAL\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:59799}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: d1e71926a0f1ce450d683011cb0872f1&#10;*** Element info: {Using=xpath, value=//input[@id='txtteamgdSearch']}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given login New SCD with Verification Team Lead.............................passed
+And click on Activity button................................................passed
+When Search for Team Lead Assignment queue link and click on it.............passed
+And Click on Add Verifiers link.............................................passed
+And Add Verifier into Verifier List pane....................................passed
+And Select an UnAssigned Binder and select Verifier.........................passed
+Then click on Binder Assignment button......................................failed
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='txtteamgdSearch']"}
+  (Session info: chrome=91.0.4472.77)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
 System info: host: 'SW12-OPVDI74', ip: '10.2.10.232', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '15.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 90.0.4430.212, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\MANOJ~1.MAL\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:56218}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: fe84a8884f324269e24ead0ba603b9b8
-*** Element info: {Using=xpath, value=//table/tbody/tr[1]//td[1]//input[@class='k-checkbox']}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.77, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\MANOJ~1.MAL\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:59799}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d1e71926a0f1ce450d683011cb0872f1
+*** Element info: {Using=xpath, value=//input[@id='txtteamgdSearch']}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -51,10 +108,46 @@ Session ID: fe84a8884f324269e24ead0ba603b9b8
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy20.isSelected(Unknown Source)
-	at pageClass.BinderAssignmentToTeamLead.BndrAssignmentToTL(BinderAssignmentToTeamLead.java:155)
-	at stepdefinition.AssignBinderToTeamLead.click_on_Assign_button(AssignBinderToTeamLead.java:53)
-	at ✽.click on Assign button(file:///C:/Users/manoj.mali/git/repository2/NewSCD/src/test/java/feature/NewSCDLoginFeature.feature:83)
+	at com.sun.proxy.$Proxy20.click(Unknown Source)
+	at pageClass.BinderAssignmentToVerifier.BndrAssignmentToTL(BinderAssignmentToVerifier.java:127)
+	at stepdefinition.AssignBinderToVerifier.click_on_Binder_Assignment_button(AssignBinderToVerifier.java:52)
+	at ✽.click on Binder Assignment button(file:///C:/Users/manoj.mali/git/repository2/NewSCD/src/test/java/feature/NewSCDLoginFeature.feature:95)
+]]></failure>
+    </testcase>
+    <testcase classname="NewSCD functional test" name="Assign Binder to Verification 2" time="23.385">
+        <failure message="element not interactable&#10;  (Session info: chrome=91.0.4472.77)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'&#10;System info: host: 'SW12-OPVDI74', ip: '10.2.10.232', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '15.0.1'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.77, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\MANOJ~1.MAL\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:59799}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: d1e71926a0f1ce450d683011cb0872f1" type="org.openqa.selenium.ElementNotInteractableException"><![CDATA[Given login New SCD with Verifier...........................................passed
+When Search for a Binder....................................................failed
+Then click on Open Binder button............................................skipped
+
+StackTrace:
+org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=91.0.4472.77)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'SW12-OPVDI74', ip: '10.2.10.232', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '15.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.77, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\MANOJ~1.MAL\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:59799}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d1e71926a0f1ce450d683011cb0872f1
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
+	at jdk.internal.reflect.GeneratedMethodAccessor92.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy20.sendKeys(Unknown Source)
+	at pageClass.OpenBinderForVerifier.OpenBinderForVerifierFeature(OpenBinderForVerifier.java:69)
+	at stepdefinition.OpenBinderWithVerifierLogin.Search_for_a_Binder(OpenBinderWithVerifierLogin.java:32)
+	at ✽.Search for a Binder(file:///C:/Users/manoj.mali/git/repository2/NewSCD/src/test/java/feature/NewSCDLoginFeature.feature:102)
 ]]></failure>
     </testcase>
 </testsuite>
