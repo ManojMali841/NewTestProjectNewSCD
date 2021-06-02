@@ -1,7 +1,6 @@
 
 package pageClass;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
@@ -100,15 +99,14 @@ WebElement UserRoles;
 		
 	}
 	
-	public void BinderAssignToVerifier() throws IOException, org.json.simple.parser.ParseException   {
+	public void BndrAssignmentToTL() throws InterruptedException, IOException, ParseException, org.json.simple.parser.ParseException {
 		
-		driver.manage().timeouts().implicitlyWait(waitPeriod, TimeUnit.SECONDS);
-		WebDriverWait wait=new WebDriverWait(driver, waitPeriod);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		activityBtn.click();
-		driver.manage().timeouts().implicitlyWait(waitPeriod, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		verifierQueue.click();
-		driver.manage().timeouts().implicitlyWait(waitPeriod, TimeUnit.SECONDS);
-		JavascriptExecutor js = (JavascriptExecutor)driver;
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		//JavascriptExecutor js = (JavascriptExecutor)driver;
 		JSONParser jparser= new JSONParser();
 		FileReader fr=new FileReader("C:/Users/manoj.mali/git/repository2/NewSCD/src/main/java/testData/TeamLeadLoginData.json");
 		JSONObject jobject=(JSONObject) jparser.parse(fr);
@@ -123,46 +121,47 @@ WebElement UserRoles;
 		
 		String[] bindrList=BinderId.split("/");
 		String xp="//div[@id='teamLeader']//*[contains(text(),'"+ VerifierName +"')]";	
-		driver.manage().timeouts().implicitlyWait(waitPeriod, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		addVerifierbtn.click();
-		driver.manage().timeouts().implicitlyWait(waitPeriod, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		VerifierSearch.click();
-		driver.manage().timeouts().implicitlyWait(waitPeriod, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		VerifierSearch.sendKeys(VerifierName);
-		driver.manage().timeouts().implicitlyWait(waitPeriod, TimeUnit.SECONDS);
-		wait.until(ExpectedConditions.visibilityOf(verifierCheckBox));
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		if(verifierCheckBox.isSelected()==false) {
 			verifierCheckBox.click();
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		verifierAddButton.click();
 		}
 		else 
 			verifierCancelButton.click();
 		
-		driver.manage().timeouts().implicitlyWait(waitPeriod, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		
 		for(int j=0;j<bindrList.length;j++) {
 		if(bindrList[j]!="") {
 		if(binderSearchBtn.isEnabled()==true)
 		binderSearchBtn.click();
-		driver.manage().timeouts().implicitlyWait(waitPeriod, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		searchTextBoxBinder.sendKeys(bindrList[j]);
-		driver.manage().timeouts().implicitlyWait(waitPeriod, TimeUnit.SECONDS);
-		wait.until(ExpectedConditions.visibilityOf(binderCheckBox));
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		if(binderCheckBox.isSelected()==false)
 		binderCheckBox.click();
-		driver.manage().timeouts().implicitlyWait(waitPeriod, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		
 		/*if(BindrSrchClearBtn.isEnabled()==true) {
 			BindrSrchClearBtn.click();
 		}*/
 		}
 		}
-		driver.manage().timeouts().implicitlyWait(waitPeriod, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		driver.findElement(By.xpath(xp)).click();
 		if(binderAssigntoVerifier.isEnabled()==true)
 			binderAssigntoVerifier.click();
-		driver.manage().timeouts().implicitlyWait(waitPeriod, TimeUnit.SECONDS);		
+		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
+		
+		
+		
 	}
 	}
   }
