@@ -51,7 +51,7 @@ public void click_on_Binder_Assignment_button() throws InterruptedException, io.
 	BinderAssignmentToVerifier A=new BinderAssignmentToVerifier();
 	A.BndrAssignmentToTL();
 	AdminHomePage AHP=new AdminHomePage();
-	AHP.UserLogout();
+	//AHP.UserLogout();
 	
 }
 }

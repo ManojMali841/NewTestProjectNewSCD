@@ -52,7 +52,7 @@ public void click_on_Assign_button() throws InterruptedException, io.cucumber.co
 	BinderAssignmentToTeamLead A=new BinderAssignmentToTeamLead();
 	A.BndrAssignmentToTL();
 	AdminHomePage AHP=new AdminHomePage();
-	AHP.UserLogout();
+	//AHP.UserLogout();
 	
 }
 }
