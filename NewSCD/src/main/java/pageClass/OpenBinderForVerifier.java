@@ -58,19 +58,19 @@ public class OpenBinderForVerifier extends BaseClass{
 			JSONObject cred=(JSONObject) jarray.get(i);
 		String	binderId=(String)cred.get("BinderId");
 		//String	pass=(String)cred.get("Password");
-		//driver.wait(20000);
+		
 		Thread.sleep(2000);
 		activityBtn.click();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		verifierQueue.click();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		binderSearchBtn.click();
 		Thread.sleep(5000);
 		searchTextBoxBinder.sendKeys(binderId);
 		Thread.sleep(3000);
 		if(openBinderBtn.isEnabled()==true)
 		openBinderBtn.click();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		driver.navigate().refresh();
 		}
 	}
