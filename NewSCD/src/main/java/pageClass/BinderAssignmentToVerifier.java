@@ -101,11 +101,11 @@ WebElement UserRoles;
 	
 	public void BndrAssignmentToTL() throws InterruptedException, IOException, ParseException, org.json.simple.parser.ParseException {
 		WebDriverWait wait=new WebDriverWait(driver, 30);
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		activityBtn.click();
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		verifierQueue.click();
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		//JavascriptExecutor js = (JavascriptExecutor)driver;
 		JSONParser jparser= new JSONParser();
 		FileReader fr=new FileReader("C:/Users/manoj.mali/git/repository2/NewSCD/src/main/java/testData/TeamLeadLoginData.json");
@@ -121,46 +121,46 @@ WebElement UserRoles;
 		
 		String[] bindrList=BinderId.split("/");
 		String xp="//div[@id='teamLeader']//*[contains(text(),'"+ VerifierName +"')]";	
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		addVerifierbtn.click();
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		VerifierSearch.click();
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		VerifierSearch.sendKeys(VerifierName);
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		if(verifierCheckBox.isSelected()==false) {
 			verifierCheckBox.click();
-			driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+			Thread.sleep(2000);
 		verifierAddButton.click();
 		}
 		else 
 			verifierCancelButton.click();
 		
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		
 		for(int j=0;j<bindrList.length;j++) {
 		if(bindrList[j]!="") {
 		if(binderSearchBtn.isEnabled()==true)
 		//binderCheckBox.click();//
 			binderSearchBtn.click();
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		searchTextBoxBinder.sendKeys(bindrList[j]);
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		
 		Thread.sleep(30000);
 		if(binderCheckBox.isSelected()==false)
 			wait.until(ExpectedConditions.elementToBeClickable(binderCheckBox)).click();//binderCheckBox.click();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		
 		/*if(BindrSrchClearBtn.isEnabled()==true) {
 			BindrSrchClearBtn.click();
 		}*/
 		}
 		}
-		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath(xp)).click();
 		if(binderAssigntoVerifier.isEnabled()==true)
 			binderAssigntoVerifier.click();
-		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		
 		
 		

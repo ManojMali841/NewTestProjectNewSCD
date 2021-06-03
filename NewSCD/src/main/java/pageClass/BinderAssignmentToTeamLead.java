@@ -105,16 +105,16 @@ public class BinderAssignmentToTeamLead extends BaseClass{
 	}
 	
 	public void BndrAssignmentToTL() throws InterruptedException, IOException, ParseException, org.json.simple.parser.ParseException {
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		Thread.sleep(20000);
 		
 		//Expandbutton.click();
 		CheckDeleteUsrFun();
 		WebDriverWait wait=new WebDriverWait(driver,40);
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		activityBtn.click();
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		managerQueue.click();
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		//JavascriptExecutor js = (JavascriptExecutor)driver;
 		JSONParser jparser= new JSONParser();
 		FileReader fr=new FileReader("C:/Users/manoj.mali/git/repository2/NewSCD/src/main/java/testData/ManagerLoginData.json");
@@ -129,46 +129,46 @@ public class BinderAssignmentToTeamLead extends BaseClass{
 		String	BinderId=(String)cred.get("BinderId");
 		String[] bindrList=BinderId.split("/");
 		String xp="//div[@id='teamLeader']//*[contains(text(),'"+ TeamLeadName +"')]";	
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		addTeamLeadbtn.click();
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		teamLeadSearch.click();
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		teamLeadSearch.sendKeys(TeamLeadName);
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		if(teamLeadCheckBox.isSelected()==false) {
 		teamLeadCheckBox.click();
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		teamLeadAddButton.click();
 		}
 		else 
 		teamLeadCancelButton.click();
 		
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		
 		for(int j=0;j<bindrList.length;j++) {
 		if(bindrList[j]!="") {
 		if(binderSearchBtn.isEnabled()==true)
 		binderSearchBtn.click();
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		searchTextBoxBinder.sendKeys(bindrList[j]);
 		//driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		Thread.sleep(20000);
 		//if(binderCheckBox.isSelected()==false) {
 			wait.until(ExpectedConditions.elementToBeClickable(binderCheckBox)).click();//binderCheckBox.click();
 		//}
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+			Thread.sleep(2000);
 		
 		//if(BindrSrchClearBtn.isEnabled()==true) {
 			//BindrSrchClearBtn.click();
 		
 		}
 		}
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath(xp)).click();
 		if(binderAssigntoTL.isEnabled()==true)
 		binderAssigntoTL.click();
-		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		
 	
 		
@@ -177,14 +177,14 @@ public class BinderAssignmentToTeamLead extends BaseClass{
 	public void CheckDeleteUsrFun() throws IOException, ParseException, InterruptedException, org.json.simple.parser.ParseException
 	{
 		
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		adminitvBtn.click();
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		if(userMgmtBtn.isEnabled()) {
 		userMgmtBtn.click();
-		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 	    ThreeDots.click();
-	    driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
+	    Thread.sleep(2000);
 	        try {
 	        if(DeleteButton.isDisplayed()==false)
 	        System.out.println("Delete functionality is not Available");
