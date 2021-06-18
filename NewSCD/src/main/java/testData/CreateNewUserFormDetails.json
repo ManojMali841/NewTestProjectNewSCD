@@ -1,0 +1,31 @@
+{
+"FormDetails":[ 
+
+{
+"Username":"Manojtest1",
+"FirstName":"DemoD",
+"LastName":"ManagerD",
+"Email":"Test@gmail.com",
+"Password":"Abcd@123",
+"Location":"Mumbai",
+"UserRole":["Manager","Reviewer","Sr. Verifier","Team Lead","Verifier"],
+"Department":"Verification-Temp Staff",
+"Comments":"dummyuser1",
+"SecurityQuestion1":"In which city you were born ?",
+"answer1":"Pune",
+"SecurityQuestion2":"In which city was your first job ?",
+"answer2":"Mumbai",
+"SecurityQuestion3":"What is my father's birthday ?",
+"answer3":"SecondOctober",
+"newpassword":"Abcd@123"
+
+}
+]
+
+
+
+
+
+
+
+}
